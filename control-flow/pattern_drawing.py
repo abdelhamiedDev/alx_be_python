@@ -1,3 +1,13 @@
-size = int (input("Enter the size of the pattern: "))
-for i in range(size):
-    print( "* " * size)
+# Prompt user for pattern size
+size = int(input("Enter the size of the pattern: "))
+
+# Initialize row counter
+row = 0
+
+# Outer loop: while loop for rows
+while row < size:
+    # Inner loop: for loop for columns
+    for col in range(size):
+        print("*", end="")   # print star without new line
+    print()  # move to the next line after finishing one row
+    row += 1  # go to next row
