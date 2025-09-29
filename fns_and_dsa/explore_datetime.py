@@ -1,9 +1,20 @@
 import datetime
 from datetime import timedelta
 
-current_date = datetime.datetime.now()
-print(f"Current date and time: {current_date}")
+def get_current_datetime():
+    current_date = datetime.datetime.now()
+    return current_date
 
-days_to_add = int(input("Enter the number of days to add to the current date: "))
-new_date = current_date + timedelta(days=days_to_add)
-print(f"Future date: {new_date}")
+def calculate_future_date(days_ahead):
+    current_date = get_current_datetime()
+    future_date = current_date + timedelta(days=days_ahead)
+    return future_date
+
+def main():
+    print("Current date and time:", get_current_datetime())
+    days = int(input("Enter number of days to add to the current date: "))
+    future_date = calculate_future_date(days)
+    print(f"Future date: {future_date}")
+
+if __name__ == "__main__":
+    main()
