@@ -9,6 +9,10 @@ def safe_divide(numerator, denominator):
     Raises:
         ValueError: If the denominator is zero.
     """  
+    
+    
+    numerator = float(numerator)
+    denominator = float(denominator)
     try:
         result = numerator / denominator
     except ZeroDivisionError:
