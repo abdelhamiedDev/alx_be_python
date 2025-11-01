@@ -11,11 +11,11 @@ def main():
 
     try:
         # Convert string arguments to float
-        num = float(numerator)
-        denom = float(denominator)
+        numerator = float(numerator)
+        denominator = float(denominator)
         
         # Call safe_divide with numeric values
-        result = safe_divide(num, denom)
+        result = safe_divide(numerator, denominator)
         print(f"Result: {result}")
         
     except ValueError:
