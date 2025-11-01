@@ -16,7 +16,7 @@ def main():
         
         # Call safe_divide with numeric values
         result = safe_divide(numerator, denominator)
-        print(f"Result: {result}")
+        print(f"The result of the division is: {result}")
         
     except ValueError:
         print("Error: Please enter valid numeric values.")
