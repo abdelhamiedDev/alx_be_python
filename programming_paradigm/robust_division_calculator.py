@@ -14,7 +14,7 @@ def safe_divide(numerator, denominator):
 
     except ValueError:
         # When conversion to float fails
-        return "Error: Both inputs must be numbers."
+        return "Error: Please enter numeric values only."
 
     except ZeroDivisionError:
         return "Error: Cannot divide by zero."
