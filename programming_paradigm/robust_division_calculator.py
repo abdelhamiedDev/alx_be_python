@@ -1,28 +1,25 @@
 def safe_divide(numerator, denominator):
-    """Performs a division operation with error handling for division by zero.
-
-    Args:
-        numerator (float): The numerator of the division.
-        denominator (float): The denominator of the division.
-    Returns:
-        float: The result of the division if successful.
-
-    Raises:
-        TypeError: If inputs are not numeric.
-        ZeroDivisionError: If denominator is zero.
-    """  
-    # Convert inputs to float and validate
     try:
-        numerator = float(numerator)
-        denominator = float(denominator)
-    except (ValueError, TypeError) as e:
-        # Use a consistent exception for non-numeric inputs
-        raise TypeError("Error: Please enter numeric values only.") from e
+        # Convert to float
+        num = float(numerator)
+        denom = float(denominator)
 
-    # Check for division by zero explicitly
-    if denominator == 0:
-        raise ZeroDivisionError("Error: Cannot divide by zero.")
+        # Check division by zero
+        if denom == 0:
+            raise ZeroDivisionError("Cannot divide by zero.")
 
-    # Successful division: return the formatted string requested by the user
-    result = numerator / denominator
-    return f"The result of the division is {result}"
+        # Perform division
+        result = num / denom
+        return f"The result of the division is: {result}"
+
+    except ValueError:
+        # When conversion to float fails
+        return "Error: Both inputs must be numbers."
+
+    except ZeroDivisionError as e:
+        # Catch manual raise or actual division by zero
+        return f"Error: {e}"
+
+    except Exception as e:
+        # Catch anything unexpected
+        return f"Unexpected error: {e}"
