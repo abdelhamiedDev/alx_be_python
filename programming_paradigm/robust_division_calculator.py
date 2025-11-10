@@ -6,7 +6,7 @@ def safe_divide(numerator, denominator):
 
         # Check division by zero
         if denom == 0:
-            raise ZeroDivisionError("Cannot divide by zero.")
+            raise ZeroDivisionError
 
         # Perform division
         result = num / denom
@@ -16,10 +16,9 @@ def safe_divide(numerator, denominator):
         # When conversion to float fails
         return "Error: Both inputs must be numbers."
 
-    except ZeroDivisionError as e:
-        # Catch manual raise or actual division by zero
-        return f"Error: {e}"
+    except ZeroDivisionError:
+        return "Error: Cannot divide by zero."
 
     except Exception as e:
         # Catch anything unexpected
-        return f"Unexpected error: {e}"
+        return "Unexpected error occurred."
